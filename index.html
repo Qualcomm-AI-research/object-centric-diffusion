@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>OCD: Object-Centric Diffusion for Efficient Video Editing</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">OCD: Object-Centric Diffusion<br>for Efficient Video Editing</h1>
+            <div class="is-size-5 publication-authors">
+			<span class="author-block"><a href="https://www3.cs.stonybrook.edu/~kkahatapitiy/">Kumara Kahatapitiya</a>,</span>
+			<span class="author-block"><a href="https://nl.linkedin.com/in/adil-karjauv">Adil Karjauv</a>,</span>
+			<span class="author-block"><a href="https://davideabati.info/">Davide Abati</a>,</span>
+			<span class="author-block"><a href="https://www.porikli.com/">Fatih Porikli</a>,</span>
+			<span class="author-block"><a href="https://yukimasano.github.io/">Yuki M. Asano</a>,</span>
+			<span class="author-block"><a href="https://habibian.github.io/">Amirhossein Habibian</a></span>
+            </div>
+			<div class="is-size-5 publication-authors">
+              <h2>Qualcomm AI Research</h2>
+            </div>
+			<div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2401.05735" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+<!--      <h2 class="title is-3">Another Carousel</h2>-->
+      <h2 class="title" style="text-align: center; font-size: 20px;">TL;DR:<br/>1. Tokens can be merged a lot, especially along the temporal axis and on the background regions.
+                                                                 <br/>2. Different sampler for foreground and background: fewer sampling steps to background regions yet improved quality compared to baseline.</h2>
+      <div id="results-carousel-teaser" class="carousel results-carousel">
+
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_00_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_01_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_02_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video4">
+          <video poster="" id="video4" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_03_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video5">
+          <video poster="" id="video5" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_04_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video6">
+          <video poster="" id="video6" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_05_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video7">
+          <video poster="" id="video7" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_06_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video8">
+          <video poster="" id="video8" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_07_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video9">
+          <video poster="" id="video9" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_08_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <h2 class="subtitle has-text-centered">
+        Note: timings are averaged across the shown sequences.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Diffusion-based video editing have reached impressive quality and can transform either the global style, local structure, and attributes of given video inputs, following textual edit prompts.
+            However, such solutions typically incur heavy memory and computational costs to generate temporally-coherent frames, either in the form of diffusion inversion and/or cross-frame attention.
+            In this paper, we conduct an analysis of such inefficiencies, and suggest simple yet effective modifications that allow significant speed-ups whilst maintaining quality.
+            Moreover, we introduce Object-Centric Diffusion, coined as OCD, to further reduce latency by allocating computations more towards foreground edited regions that are arguably more important for perceptual quality.
+            We achieve this by two novel proposals: i) Object-Centric Sampling, decoupling the diffusion steps spent on salient regions or background, allocating most of the model capacity to the former, and
+            ii) Object-Centric 3D Token Merging, which reduces cost of cross-frame attention by fusing redundant tokens in unimportant background regions.
+            Both techniques are readily applicable to a given video editing model <i>without</i> retraining, and can drastically reduce its memory and computational cost.
+            We evaluate our proposals on inversion-based and control-signal-based editing pipelines, and show a latency reduction up to 10x for a comparable synthesis quality.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Video carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">FateZero Results</h2>
+      <div id="results-carousel-fatezero" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video10" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_09_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video2">
+          <video poster="" id="video11" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_10_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video3">
+          <video poster="" id="video12" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_11_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video4">
+          <video poster="" id="video13" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_12_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video5">
+          <video poster="" id="video14" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_13_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video6">
+          <video poster="" id="video15" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_14_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video7">
+          <video poster="" id="video16" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_15_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video8">
+          <video poster="" id="video17" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_16_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video9">
+          <video poster="" id="video18" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_17_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video10">
+          <video poster="" id="video19" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_18_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video11">
+          <video poster="" id="video20" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_19_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video12">
+          <video poster="" id="video21" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_20_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+<!-- Video carousel -->
+<section class="hero is-small ">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">ControlVideo Results</h2>
+      <div id="results-carousel-controlvideo" class="carousel results-carousel">
+
+        <div class="item item-video1">
+          <video poster="" id="video_cv_00" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_cv_00_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video2">
+          <video poster="" id="video_cv_01" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_cv_01_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video3">
+          <video poster="" id="video_cv_02" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_cv_02_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video4">
+          <video poster="" id="video_cv_03" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_cv_03_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video5">
+          <video poster="" id="video_cv_04" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_cv_04_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video6">
+          <video poster="" id="video_cv_05" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_cv_05_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video7">
+          <video poster="" id="video_cv_06" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_cv_06_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+        <div class="item item-video8">
+          <video poster="" id="video_cv_07" autoplay controls muted loop height="100%">
+            <!-- Your video file here -->
+            <source src="static/videos/teaser_cv_07_resized.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video carousel -->
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.<br>
+			This website is licensed under a <a rel="license"  href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
